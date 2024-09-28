@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landingpage');
 });
 
 Route::get('/dashboard', function () {
@@ -50,7 +50,9 @@ Route::get('/sinopsis', [DashboardController::class, 'sinopsis']);
 Route::get('/books/search', [DashboardController::class, 'search'])->name('books.search');
 Route::get('/books/approved', [DashboardController::class, 'showApprovedBooks'])->name('books.approved');
 
-
+Route::get('/landingpage', [BukuController::class, 'landingpage'])->name('landingpage');
+Route::get('/search', [BukuController::class, 'search'])->name('pencarian.buku');
+Route::get('/buku/diterima', [BukuController::class, 'bukuditerima'])->name('buku.disetujui');
 
 
 

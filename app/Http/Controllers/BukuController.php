@@ -190,4 +190,50 @@ class BukuController extends Controller
         Alert::toast('Data Buku Berhasil Di Tolak', 'success');
         return redirect()->back();
     }
+
+    public function landingpage(){
+        $rows = Buku::where('status', 'Di Setujui')->get();
+        // Variabel kosong untuk hasil pencarian (default)
+        $books = collect(); 
+        return view('landingpage', compact('rows', 'books'));
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        // Pencarian hanya untuk buku yang statusnya 'approved'
+        $books = Buku::where('status', 'Di Setujui')
+            ->where(function ($q) use ($query) {
+                $q->where('nama_buku', 'LIKE', "%{$query}%")
+                ->orWhere('jenis_buku', 'LIKE', "%{$query}%")
+                ->orWhereHas('penulis', function ($q) use ($query) {
+                $q->where('name', 'LIKE', "%{$query}%");
+                });
+            })
+            ->get();
+
+        // Mengembalikan view dengan hasil pencarian
+        return view('landingpage', compact('books'));
+    }
+
+    public function bukuditerima()
+    {
+        $approvedBooks = Buku::where('status', 'Di Setujui')->get();
+        return view('landingpage', compact('approvedBooks'));
+    }
+    public function beliBuku($id)
+    {
+        // Cari buku berdasarkan id
+        $buku = Buku::findOrFail($id);
+
+        // Tambahkan jumlah buku terjual
+        $buku->jumlah_buku_terjual = $buku->jumlah_buku_terjual + 1;
+
+        // Simpan perubahan
+        $buku->save();
+
+        // Redirect atau tampilkan pesan sukses
+        return redirect()->back()->with('success', 'Buku berhasil dibeli!');
+    }
 }
