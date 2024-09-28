@@ -45,7 +45,7 @@
     <nav class="navbar navbar-expand-lg navbar-light py-4 bg-nav">
         <div class="container">
             <!-- Brand -->
-            <a class="navbar-brand" href="#" onclick="window.location.reload(true);">
+            <a class="navbar-brand" href="/" onclick="window.location.reload(true);">
                 <img src="{{asset("uiprofile/img/vektor.png")}}" alt="books" width="42" height="42" class="d-inline-block mt--2 me-2">
                 <span class="text-body fs-4 fw-bolder">Books Shop</span>
             </a>
@@ -70,13 +70,13 @@
                 </ul>
                 <!-- Social Media -->
                 <div class="d-flex mt-3 ms-3 mt-md-0 ms-md-0">
-                    <a href="https://www.facebook.com/mahmul.r.3?mibextid=ZbWKwL" target="_blank" class="btn btn-social-media me-3">
+                    <a href="/"  class="btn btn-social-media me-3">
                         <i class="bi bi-facebook"></i>
                     </a>
-                    <a href="https://www.instagram.com/mahmul.r/?utm_source=ig_web_button_share_sheet" target="_blank" class="btn btn-social-media me-3">
+                    <a href="/"  class="btn btn-social-media me-3">
                         <i class="bi bi-instagram"></i>
                     </a>
-                    <a href="https://youtube.com/@mahmulr3768?si=Jsjnl4zq0Ur8B3Gz" target="_blank" class="btn btn-social-media me-3">
+                    <a href="/"  class="btn btn-social-media me-3">
                         <i class="bi bi-youtube"></i>
                     </a>
                 </div>
@@ -96,7 +96,7 @@
                     <h1 class="fw-bold lh-2 mb-4">Books Shop</h1>
                     <p class="lead mb-5 fa-beat" style="color: #4186E4;">Membaca Mudah, Buku di Genggaman!</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                        <a href="https://api.whatsapp.com/send?phone=6282183628475&text=Assalamualaikum.." class="btn btn-success rounded-pill px-4 py-2"><i class="bi bi-whatsapp me-2"></i> Hubungi Kami</a>
+                        <a href="https://api.whatsapp.com/send?phone=6282274880603" class="btn btn-success rounded-pill px-4 py-2"><i class="bi bi-whatsapp me-2"></i> Hubungi Kami</a>
                     </div>
                 </div>
             </div>
@@ -198,15 +198,12 @@
             <div class="row align-items-center text-start g-5 py-4">
                 <div class="col-lg-6">
                     <h4 class="fw-bold lh-2 mb-3">Visi</h4>
-                    <p>“Terwujudnya masyarakat Sipirok yang religius guna membangun keluarga smart (sakinah, mawaddah, rahmah dan tercatat)”.</p>
+                    <p>Membangun Sistem Penjualan Buku Dengan Transaksi Melalui ICP.</p>
                 </div>
                 <div class="col-lg-6">
                     <h4 class="fw-bold lh-2 mb-3">Misi</h4>
                     <ol>
-                        <li>Meningkatkan kualitas bimbingan, pemahaman dan pelayanan kehidupan beragama.</li>
-                        <li>Meningkatkan pelayanan prima nikah dan rujuk.</li>
-                        <li>Meningkatkan kualitas pembinaan di bidang keluarga sakinah, kemitraan umat, kemasjidan, ZIS, produk halal, ibadah sosial dan haji.</li>
-                        <li>Optimalisasi 5 nilai budaya kerja (Intergritas, Profesionalitas, Inovasi, Tanggung Jawab, dan Keteladanan).</li>
+                        <li>Menerapkan teknologi baru didalam E-commerce.</li>
                     </ol>
                 </div>
             </div>

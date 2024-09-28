@@ -23,9 +23,12 @@
 <div class="row h-100">
     <div class="col-lg-5 col-12">
         <div id="auth-left">
-            {{-- <div class="auth-logo">
-                <a href="index.html"><img src="./assets/compiled/svg/logo.svg" alt="Logo"></a>
-            </div> --}}
+            <div class="auth-logo">
+                <a class="navbar-brand" href="/">
+                    <img src="{{asset("uiprofile/img/vektor.png")}}" alt="books" width="42" height="42" class="d-inline-block mt--2 me-2">
+                    <span class="text-body fs-4 fw-bolder">Books Shop</span>
+                </a>
+            </div>
             <h1 class="auth-title">Forgot Password</h1>
             <p class="auth-subtitle mb-5">Input your email and we will send you reset password link.</p>
 

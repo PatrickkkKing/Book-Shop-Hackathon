@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Book Shop</title>
-    <link rel="shortcut icon" href="{{ asset('images/laravel.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset("uiprofile/img/vektor.png")}}" type="image/x-icon">
+
     <link rel="stylesheet" href="{{ asset('assets/compiled/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/compiled/css/app-dark.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/compiled/css/auth.css') }}">
@@ -19,9 +20,12 @@
 <div class="row h-100">
     <div class="col-lg-5 col-12">
         <div id="auth-left">
-            {{-- <div class="auth-logo">
-                <a href="index.html"><img src="./assets/compiled/svg/logo.svg" alt="Logo"></a>
-            </div> --}}
+            <div class="auth-logo">
+                <a class="navbar-brand" href="/">
+                    <img src="{{asset("uiprofile/img/vektor.png")}}" alt="books" width="42" height="42" class="d-inline-block mt--2 me-2">
+                    <span class="text-body fs-4 fw-bolder">Books Shop</span>
+                </a>
+            </div>
             <h1 class="auth-title">Log in.</h1>
             <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
 
