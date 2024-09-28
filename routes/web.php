@@ -49,6 +49,7 @@ Route::get('/show/{id}', [DashboardController::class, 'show']);
 Route::get('/sinopsis', [DashboardController::class, 'sinopsis']);
 Route::get('/books/search', [DashboardController::class, 'search'])->name('books.search');
 Route::get('/books/approved', [DashboardController::class, 'showApprovedBooks'])->name('books.approved');
+Route::post('/beli-buku/{id}', [DashboardController::class, 'beliBuku'])->name('buku.beli');
 
 Route::get('/landingpage', [BukuController::class, 'landingpage'])->name('landingpage');
 Route::get('/search', [BukuController::class, 'search'])->name('pencarian.buku');

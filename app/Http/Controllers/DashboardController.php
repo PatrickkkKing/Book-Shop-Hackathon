@@ -74,6 +74,22 @@ class DashboardController extends Controller
         return view('dashboard', compact('approvedBooks'));
     }
     
+    public function beliBuku($id)
+    {
+        // Cari buku berdasarkan id
+        $buku = Buku::findOrFail($id);
+
+        // Tambahkan jumlah buku terjual
+        $buku->jumlah_buku_terjual = $buku->jumlah_buku_terjual + 1;
+
+        // Simpan perubahan
+        $buku->save();
+
+        // Redirect atau tampilkan pesan sukses
+        toast('Buku Berhasil Terbeli!','success');
+        return redirect()->back();
+    }
+
     public function create()
     {
         //

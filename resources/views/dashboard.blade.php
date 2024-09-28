@@ -1,9 +1,17 @@
+<title>Dashboard - Book Shop</title>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
+    @can('view admin')
+    <div>
+        <h2>Welcome Admin!</h2>
+        <p>Ini adalah konten khusus untuk Admin.</p>
+        <!-- Tambahkan konten lain yang spesifik untuk penulis -->
+    </div>
+@endcan
     @can('view penulis')
         <div>
             <h2>Welcome Penulis!</h2>

@@ -23,8 +23,18 @@
                     <p class="text-secondary">Penerbit :{{$row->penerbit_buku}}</p>
                     <p class="text-secondary">Tahun Terbit:{{Carbon\carbon::parse($row->tahun_terbit_buku)->format('d F Y')}}</p>
                     <p class="text-secondary">Edisi : {{$row->edisi_buku}}</p>
+                    <p class="text-secondary">Jumlah Terjual : {{$row->jumlah_buku_terjual}}</p>
                     <h2>Rp. {{$row->harga_jual}}</h2>
-                    <a href="" class="btn btn-sm btn-primary">Beli E-Book</a>
+                    <form action="{{ route('buku.beli', $row->id_buku) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-sm btn-primary">Beli E-Book</button>
+                    </form>
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                                    
                     {{-- <a class="btn btn-outline-success btn-sm" target="_blank" href="{{ route('files.show', $row->id_buku ) }}">E-Book</a> --}}
                 </div>
             </div>
