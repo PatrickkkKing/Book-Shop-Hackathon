@@ -44,16 +44,16 @@ class BukuController extends Controller
     {
         //
         $request->validate([
-            'dokumen_buku' => 'required|mimes:pdf|max:2048',
-            'cover_buku' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+            'dokumen_buku' => 'required|mimes:pdf',
+            'cover_buku' => 'required|image|mimes:jpeg,png,jpg,gif'
         ]);
         //mengambil data yang di input oleh user
         $file = $request->file('dokumen_buku');
-        $fileName = time().'_'.$file->getClientOriginalName();
-        $filePath = $file->storeAs('buku', $fileName); 
+        $fileName = time() . '_' . $file->getClientOriginalName();
+        $filePath = $file->storeAs('buku', $fileName);
 
         // Simpan file gambar ke direktori 'public/images'
-        $imageName = time().'.'.$request->cover_buku->extension();
+        $imageName = time() . '.' . $request->cover_buku->extension();
         $request->cover_buku->move(public_path('images'), $imageName);
 
         Buku::create([
@@ -84,9 +84,9 @@ class BukuController extends Controller
             $row = Buku::findOrFail($id); // Tampilkan semua buku tanpa filter
             return view('buku.show', compact('row'));
         } else {
-        $row = Buku::where('id_buku', $id)->where('user_id', auth()->id())->firstOrFail();
-        return view('buku.show', compact('row'));
-    }
+            $row = Buku::where('id_buku', $id)->where('user_id', auth()->id())->firstOrFail();
+            return view('buku.show', compact('row'));
+        }
     }
     /**
      * Show the form for editing the specified resource.
@@ -110,13 +110,13 @@ class BukuController extends Controller
         ]);
         //mengambil data yang di input oleh user dokumen
         $file = $request->file('dokumen_buku');
-        $fileName = time().'_'.$file->getClientOriginalName();
+        $fileName = time() . '_' . $file->getClientOriginalName();
         $filePath = $file->storeAs('buku', $fileName);
 
         // Simpan file gambar ke direktori 'public/images'
-        $imageName = time().'.'.$request->cover_buku->extension();
+        $imageName = time() . '.' . $request->cover_buku->extension();
         $request->cover_buku->move(public_path('images'), $imageName);
-        
+
         $row = Buku::findOrFail($id);
         $row->update([
             'kode_buku' => $request->kode_buku,
@@ -144,7 +144,7 @@ class BukuController extends Controller
         //
         $row = Buku::where('id_buku', $id)->where('user_id', auth()->id())->firstOrFail();
         $row->delete();
-        toast('Your Post as been submited!','success');
+        toast('Your Post as been submited!', 'success');
         return redirect('buku');
     }
 
@@ -153,16 +153,16 @@ class BukuController extends Controller
         $row = Buku::findOrFail($id);
         // Ambil path dari storage
         $path = storage_path('app/' . $row->path_buku);
-        
+
         // Return response file PDF
         return response()->file($path, [
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'inline; filename="' . $row->dokumen_buku . '"',
         ]);
-        
     }
 
-    public function tampilgambar($id){
+    public function tampilgambar($id)
+    {
         // Ambil gambar berdasarkan ID
         $buku = Buku::find($id);
         // Jika gambar tidak ditemukan, return error atau redirect
