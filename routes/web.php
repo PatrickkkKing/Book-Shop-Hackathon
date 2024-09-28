@@ -22,7 +22,7 @@ Route::middleware('auth')->group(function () {
 });
 
 //Buku
-Route::get('/buku', [BukuController::class, 'index']);
+Route::get('/buku', [BukuController::class, 'index'])->name('buku');
 Route::get('/buku/create', [BukuController::class, 'create']);
 Route::post('/buku', [BukuController::class, 'store']);
 Route::get('/buku/edit/{id}', [BukuController::class, 'edit']);
@@ -54,4 +54,4 @@ Route::get('/books/approved', [DashboardController::class, 'showApprovedBooks'])
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
