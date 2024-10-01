@@ -1,6 +1,9 @@
 Cara Install atau Run Project
-'''
-'''
+```
+PHP 8.2.4
+Laravel 11
+```
+
 Jalankan perintah berikut untuk menginstal dependensi php
 
 ```
