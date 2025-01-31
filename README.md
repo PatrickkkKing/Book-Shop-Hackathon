@@ -47,8 +47,3 @@ php artisan serve
 
 
 
-## Sistem Pendaftaran Pelatihan Digital Talent Schoolarship
-Halaman Home
-![image](https://github.com/PatrickkkKing/SIP-KOMINFO-JWD/assets/116421423/8cacc2af-2758-4fcd-be70-3e3f994016eb)
-
-
